@@ -1,0 +1,31 @@
+LUXURY GROUP — sitio one-page
+=============================
+
+SUBIR A HOSTINGER
+1. hPanel > Administrador de archivos > carpeta public_html
+2. Subí TODO el contenido de esta carpeta (index.html, .htaccess, /css, /js, /assets)
+   -> Tip: subí el ZIP y usá "Extraer" dentro de public_html. Es mucho mas rapido
+      que subir 360 archivos sueltos.
+3. Verificá que .htaccess quedó arriba de todo (activá "mostrar archivos ocultos").
+
+ESTRUCTURA
+  index.html              todo el contenido (ES por defecto)
+  css/style.css           estilos
+  js/main.js              hero por scroll, idioma, animaciones
+  assets/frames/d_*.webp  240 frames desktop (1280px)
+  assets/frames/m_*.webp  120 frames mobile (854px)
+  assets/img/             logo, poster e imagen interior
+  assets/fonts/           Cormorant Garamond + Jost (self-hosted, sin Google Fonts)
+
+CAMBIOS RAPIDOS
+- Numero de WhatsApp: buscá "5492616843733" en index.html (aparece 3 veces).
+- Textos en español: se editan directo en index.html.
+- Textos en ingles: en js/main.js, objeto DICT.en.
+- Estadisticas (12 anos / 40 bodegas): en index.html, atributo data-count.
+- Duracion del hero: en css/style.css, ".hero{height:520vh}". Mas alto = scroll mas lento.
+
+REEMPLAZAR EL VIDEO EN EL FUTURO
+Los frames se generan con ffmpeg:
+  ffmpeg -i video.mp4 -vf "scale=1280:-2" -c:v libwebp -quality 70 -vsync 0 d_%03d.webp
+  ffmpeg -i video.mp4 -vf "select='not(mod(n\,2))',scale=854:-2" -vsync 0 -c:v libwebp -quality 60 m_%03d.webp
+Despues actualizá "count" en js/main.js (cantidad de frames de cada set).

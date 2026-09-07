@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Luxury Group · Creadores de experiencias exclusivas en Mendoza</title>
+<meta name="description" content="Wine tours privados, gastronomía de autor, alojamiento de primera categoría y vuelos sobre los viñedos. Mendoza vivida de una manera exclusiva, a bordo de nuestra van de lujo.">
+<meta name="theme-color" content="#050505">
+<link rel="canonical" href="https://luxurygroupmendoza.com/">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Luxury Group · Creadores de experiencias exclusivas">
+<meta property="og:description" content="Viví Mendoza de una manera exclusiva.">
+<meta property="og:image" content="assets/img/poster.jpg">
+<meta property="og:locale" content="es_AR">
+
+<link rel="preload" href="assets/fonts/cormorant-garamond-latin-300-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/jost-latin-300-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="css/style.css">
+<link rel="icon" href="assets/img/logo.webp" type="image/webp">
+<link rel="preload" as="image" href="assets/img/poster.jpg">
+</head>
+<body class="is-loading">
+
+<!-- ============ GRANO + CURSOR ============ -->
+<div class="grain" aria-hidden="true"></div>
+<div class="cursor" aria-hidden="true"><span class="cursor__dot"></span><span class="cursor__ring"></span></div>
+
+<!-- ============ PRELOADER ============ -->
+<div class="loader" id="loader">
+  <div class="loader__inner">
+    <img src="assets/img/logo.webp" alt="" class="loader__logo">
+    <div class="loader__bar"><span id="loaderBar"></span></div>
+    <div class="loader__num"><span id="loaderNum">0</span><i>%</i></div>
+  </div>
+</div>
+
+<!-- ============ NAV ============ -->
+<header class="nav" id="nav">
+  <a href="#top" class="nav__brand" data-cursor="link">
+    <img src="assets/img/logo.webp" alt="Luxury Group">
+  </a>
+  <nav class="nav__links">
+    <a href="#experiencias" data-i18n="nav.exp">Experiencias</a>
+    <a href="#aliados" data-i18n="nav.partners">Aliados</a>
+    <a href="#flota" data-i18n="nav.fleet">La Flota</a>
+    <a href="#nosotros" data-i18n="nav.about">Nosotros</a>
+  </nav>
+  <div class="nav__right">
+    <button class="lang" id="lang" aria-label="Cambiar idioma">
+      <span class="lang__on">ES</span><i>/</i><span class="lang__off">EN</span>
+    </button>
+    <a class="btn btn--sm" href="https://wa.me/5492616843733?text=Hola%20Luxury%20Group%2C%20quiero%20reservar%20una%20experiencia%20en%20Mendoza." target="_blank" rel="noopener" data-cursor="link" data-i18n="nav.cta">Reservá ahora</a>
+    <button class="burger" id="burger" aria-label="Menú"><span></span><span></span></button>
+  </div>
+</header>
+
+<div class="menu" id="menu">
+  <div class="menu__list">
+    <a href="#experiencias" data-i18n="nav.exp">Experiencias</a>
+    <a href="#aliados" data-i18n="nav.partners">Aliados</a>
+    <a href="#flota" data-i18n="nav.fleet">La Flota</a>
+    <a href="#nosotros" data-i18n="nav.about">Nosotros</a>
+    <a href="#reservar" data-i18n="nav.cta">Reservá ahora</a>
+  </div>
+  <div class="menu__foot">
+    <a href="tel:+5492616843733">+54 9 261 684-3733</a>
+    <a href="mailto:reservas@luxurygroup.com">reservas@luxurygroup.com</a>
+  </div>
+</div>
+
+<main id="top">
+
+<!-- ============ HERO SCROLL-SCRUB ============ -->
+<section class="hero" id="hero">
+  <div class="hero__sticky">
+    <canvas id="heroCanvas" class="hero__canvas"></canvas>
+    <div class="hero__veil"></div>
+    <div class="hero__vignette"></div>
+
+    <div class="hero__stage" data-stage="1">
+      <span class="eyebrow" data-i18n="hero.eyebrow">Mendoza · Argentina</span>
+      <h1 class="display display--xl" data-split data-i18n="hero.t1">Creadores de experiencias exclusivas</h1>
+      <span class="rule"></span>
+    </div>
+
+    <div class="hero__stage" data-stage="2">
+      <h2 class="display display--lg" data-split data-i18n="hero.t2">Viví Mendoza de una manera exclusiva</h2>
+      <p class="lede" data-i18n="hero.p2">Una van de lujo, un chofer privado y la Cordillera de los Andes de fondo.</p>
+    </div>
+
+    <div class="hero__stage" data-stage="3">
+      <h2 class="display display--lg" data-split data-i18n="hero.t3">El camino a los viñedos empieza acá</h2>
+      <a class="btn btn--lg" href="#reservar" data-cursor="link" data-i18n="hero.cta">Diseñá tu experiencia</a>
+    </div>
+
+    <div class="hero__scroll" id="scrollCue">
+      <span data-i18n="hero.scroll">Deslizá</span>
+      <em></em>
+    </div>
+
+    <div class="hero__progress"><span id="heroBar"></span></div>
+  </div>
+</section>
+
+<!-- ============ MANIFIESTO ============ -->
+<section class="manifesto" id="nosotros">
+  <div class="wrap">
+    <div class="manifesto__grid">
+      <div>
+        <span class="eyebrow reveal" data-i18n="man.eyebrow">Quiénes somos</span>
+        <p class="manifesto__text" data-split-lines data-i18n="man.text">Somos referentes en turismo de Mendoza. Nuestra conexión profunda con la región es lo que convierte un viaje en un recuerdo: bodegas que no figuran en las guías, mesas reservadas donde no hay reservas, y el tiempo justo para no apurar nada.</p>
+      </div>
+      <figure class="manifesto__fig reveal">
+        <img src="assets/img/interior.jpg" alt="Interior de la van de lujo de Luxury Group" loading="lazy" data-parallax>
+        <figcaption data-i18n="man.cap">A bordo · Valle de Uco</figcaption>
+      </figure>
+    </div>
+    <div class="stats">
+      <div class="stat reveal"><b data-count="12">12</b><span data-i18n="stat.1">Años creando itinerarios</span></div>
+      <div class="stat reveal"><b data-count="40">40</b><span data-i18n="stat.2">Bodegas aliadas</span></div>
+      <div class="stat reveal"><b data-count="100">100</b><span data-i18n="stat.3">% itinerarios a medida</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ EXPERIENCIAS ============ -->
+<section class="exp" id="experiencias">
+  <div class="wrap">
+    <header class="sec-head">
+      <span class="eyebrow reveal" data-i18n="exp.eyebrow">Experiencias</span>
+      <h2 class="display display--md reveal" data-i18n="exp.title">Cinco maneras de recorrer Mendoza</h2>
+    </header>
+
+    <ol class="exp__list">
+      <li class="exp__item" data-cursor="link">
+        <span class="exp__idx">01</span>
+        <div class="exp__body">
+          <h3 data-i18n="exp.1.t">Wine Tours</h3>
+          <p data-i18n="exp.1.p">Seleccionamos las bodegas más destacadas de Luján de Cuyo, Maipú y el Valle de Uco para que cada visita sea memorable. Catas privadas, barricas y sobremesa entre viñedos.</p>
+        </div>
+        <span class="exp__arrow" aria-hidden="true">↗</span>
+      </li>
+      <li class="exp__item" data-cursor="link">
+        <span class="exp__idx">02</span>
+        <div class="exp__body">
+          <h3 data-i18n="exp.2.t">Gastronomía exclusiva</h3>
+          <p data-i18n="exp.2.p">Almuerzos con vista a la montaña o cenas nocturnas de autor. Trabajamos con Catena Zapata, Nieto Senetiner y Casa Naoki, entre otras mesas difíciles de conseguir.</p>
+        </div>
+        <span class="exp__arrow" aria-hidden="true">↗</span>
+      </li>
+      <li class="exp__item" data-cursor="link">
+        <span class="exp__idx">03</span>
+        <div class="exp__body">
+          <h3 data-i18n="exp.3.t">Alojamiento</h3>
+          <p data-i18n="exp.3.p">Hoteles de primera categoría según el plan de cada viaje: Park Hyatt, Huentala Wines, Diplomatic y Arena. Reservamos, coordinamos y te llevamos.</p>
+        </div>
+        <span class="exp__arrow" aria-hidden="true">↗</span>
+      </li>
+      <li class="exp__item" data-cursor="link">
+        <span class="exp__idx">04</span>
+        <div class="exp__body">
+          <h3 data-i18n="exp.4.t">Turismo aéreo</h3>
+          <p data-i18n="exp.4.p">Disfrutá de un amanecer o un atardecer volando sobre viñedos y olivares, con el imponente fondo de la Cordillera de los Andes.</p>
+        </div>
+        <span class="exp__arrow" aria-hidden="true">↗</span>
+      </li>
+      <li class="exp__item" data-cursor="link">
+        <span class="exp__idx">05</span>
+        <div class="exp__body">
+          <h3 data-i18n="exp.5.t">Experiencias personalizadas</h3>
+          <p data-i18n="exp.5.p">Armamos el itinerario completo alrededor de lo que te interesa: aniversarios, viajes corporativos, grupos reducidos o una escapada de un solo día.</p>
+        </div>
+        <span class="exp__arrow" aria-hidden="true">↗</span>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- ============ ALIADOS / MARQUEE ============ -->
+<section class="allies" id="aliados">
+  <div class="wrap">
+    <span class="eyebrow reveal" data-i18n="al.eyebrow">Aliados</span>
+    <h2 class="display display--sm reveal" data-i18n="al.title">Las puertas que abrimos</h2>
+  </div>
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee__track">
+      <span>Catena Zapata</span><i>✕</i><span>Nieto Senetiner</span><i>✕</i><span>Casa Naoki</span><i>✕</i><span>Park Hyatt</span><i>✕</i><span>Huentala Wines</span><i>✕</i><span>Diplomatic</span><i>✕</i><span>Arena</span><i>✕</i>
+      <span>Catena Zapata</span><i>✕</i><span>Nieto Senetiner</span><i>✕</i><span>Casa Naoki</span><i>✕</i><span>Park Hyatt</span><i>✕</i><span>Huentala Wines</span><i>✕</i><span>Diplomatic</span><i>✕</i><span>Arena</span><i>✕</i>
+    </div>
+  </div>
+  <div class="marquee marquee--rev" aria-hidden="true">
+    <div class="marquee__track">
+      <span>Luján de Cuyo</span><i>✕</i><span>Valle de Uco</span><i>✕</i><span>Maipú</span><i>✕</i><span>Alta Montaña</span><i>✕</i><span>Cordillera de los Andes</span><i>✕</i>
+      <span>Luján de Cuyo</span><i>✕</i><span>Valle de Uco</span><i>✕</i><span>Maipú</span><i>✕</i><span>Alta Montaña</span><i>✕</i><span>Cordillera de los Andes</span><i>✕</i>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FLOTA ============ -->
+<section class="fleet" id="flota">
+  <div class="fleet__media">
+    <img src="assets/img/poster.jpg" alt="Mercedes-Benz Sprinter de Luxury Group con la puerta lateral abierta" loading="lazy">
+  </div>
+  <div class="fleet__copy">
+    <span class="eyebrow reveal" data-i18n="fl.eyebrow">La flota</span>
+    <h2 class="display display--md reveal" data-i18n="fl.title">Mercedes-Benz Sprinter</h2>
+    <p class="reveal" data-i18n="fl.p">Van de lujo de uso exclusivo para nuestros clientes. Butacas de cuero enfrentadas, climatización independiente, wifi a bordo y chofer bilingüe. El traslado deja de ser el tiempo muerto entre bodegas y pasa a ser parte de la experiencia.</p>
+    <ul class="specs">
+      <li class="reveal"><b>8</b><span data-i18n="fl.s1">Pasajeros</span></li>
+      <li class="reveal"><b>ES/EN</b><span data-i18n="fl.s2">Chofer bilingüe</span></li>
+      <li class="reveal"><b>24/7</b><span data-i18n="fl.s3">Disponibilidad</span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ CTA / RESERVAR ============ -->
+<section class="cta" id="reservar">
+  <div class="wrap">
+    <span class="eyebrow reveal" data-i18n="cta.eyebrow">Reservas</span>
+    <h2 class="display display--xl" data-split data-i18n="cta.title">Contános qué querés vivir</h2>
+    <p class="lede reveal" data-i18n="cta.p">Escribinos y armamos el itinerario con vos. Sin formularios eternos: un mensaje alcanza.</p>
+    <a class="btn btn--lg btn--gold" href="https://wa.me/5492616843733?text=Hola%20Luxury%20Group%2C%20quiero%20reservar%20una%20experiencia%20en%20Mendoza." target="_blank" rel="noopener" data-cursor="link" data-i18n="cta.btn">Escribinos por WhatsApp</a>
+    <div class="contact">
+      <a href="tel:+5492616843733" data-cursor="link">+54 9 261 684-3733</a>
+      <a href="tel:+542615599421" data-cursor="link">+54 9 261 559-9421</a>
+      <a href="mailto:reservas@luxurygroup.com" data-cursor="link">reservas@luxurygroup.com</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap foot__in">
+    <img src="assets/img/logo.webp" alt="Luxury Group" class="foot__logo">
+    <p class="foot__tag" data-i18n="foot.tag">Creadores de experiencias exclusivas · Mendoza, Argentina</p>
+    <p class="foot__copy">© <span id="yr"></span> Luxury Group</p>
+  </div>
+</footer>
+
+<a class="wa" href="https://wa.me/5492616843733?text=Hola%20Luxury%20Group%2C%20quiero%20reservar%20una%20experiencia%20en%20Mendoza." target="_blank" rel="noopener" aria-label="WhatsApp" data-cursor="link">
+  <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true"><path d="M17.47 14.38c-.3-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.67.15s-.77.96-.94 1.16-.35.22-.65.07a8.2 8.2 0 0 1-2.4-1.48 9 9 0 0 1-1.66-2.07c-.17-.3-.02-.46.13-.61.14-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.6-.92-2.2-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37s-1.05 1.02-1.05 2.5 1.08 2.9 1.23 3.1c.15.2 2.12 3.24 5.14 4.55.72.31 1.28.5 1.71.63.72.23 1.38.2 1.9.12.58-.09 1.75-.72 2-1.41.25-.7.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35zM12.05 21.5h-.01a9.44 9.44 0 0 1-4.8-1.32l-.35-.2-3.57.93.96-3.48-.23-.36a9.42 9.42 0 0 1-1.44-5.02c0-5.2 4.24-9.44 9.45-9.44a9.4 9.4 0 0 1 6.68 2.77 9.36 9.36 0 0 1 2.76 6.68c0 5.2-4.24 9.45-9.45 9.45zM20.15 3.85A11.34 11.34 0 0 0 12.05.5C5.78.5.68 5.6.68 11.87c0 2 .53 3.96 1.53 5.68L.58 23.5l6.1-1.6a11.35 11.35 0 0 0 5.37 1.37h.01c6.26 0 11.36-5.1 11.36-11.37 0-3.04-1.18-5.9-3.33-8.05z"/></svg>
+</a>
+
+<script src="js/main.js"></script>
+</body>
+</html>
