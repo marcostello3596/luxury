@@ -61,7 +61,7 @@
     var ir = img.width / img.height, cr = cw / ch;
     var dw, dh, dx, dy;
     if (cr > ir) { dw = cw; dh = cw / ir; dx = 0; dy = (ch - dh) / 2; }
-    else { dh = ch; dw = ch * ir; dy = 0; dx = (cw - dw) * (isMobile ? 0.42 : 0.5); }
+    else { dh = ch; dw = ch * ir; dy = 0; dx = (cw - dw) / 2; }
     ctx.drawImage(img, dx, dy, dw, dh);
   }
 
@@ -188,9 +188,12 @@
   var heroBar = document.getElementById('heroBar');
   var cue = document.getElementById('scrollCue');
   var stages = Array.prototype.slice.call(document.querySelectorAll('.hero__stage'));
-  var RANGES = [[0, 0.22], [0.32, 0.58], [0.68, 1.01]];
+  // El video tiene 4 planos. Cortes reales en los frames 47, 106 y 168 de 240.
+  // Cada etapa de texto vive dentro de su plano, con margen para no pisar el corte.
+  var RANGES = [[0, 0.185], [0.205, 0.432], [0.452, 0.692], [0.712, 1.01]];
   var wa = document.querySelector('.wa');
   var nav = document.getElementById('nav');
+  var sticky = document.querySelector('.hero__sticky');
   var lastY = 0;
 
   function onScroll() {
@@ -213,6 +216,9 @@
     nav.classList.toggle('is-stuck', y > window.innerHeight * 0.6);
     nav.classList.toggle('is-hidden', y > lastY + 4 && y > window.innerHeight && !document.body.classList.contains('menu-open'));
     lastY = y;
+
+    // el ultimo plano (van sobre negro) lleva un velo distinto
+    sticky.classList.toggle('is-end', p >= 0.70);
 
     // whatsapp flotante
     if (wa) wa.classList.toggle('is-on', y > window.innerHeight * 1.2);
@@ -312,9 +318,11 @@
       'nav.about': 'About', 'nav.cta': 'Book now',
       'hero.eyebrow': 'Mendoza · Argentina',
       'hero.t1': 'Creators of exclusive experiences',
-      'hero.t2': 'Experience Mendoza like no one else',
-      'hero.p2': 'A luxury van, a private driver and the Andes as a backdrop.',
-      'hero.t3': 'The road to the vineyards starts here',
+      'hero.t2': 'Leave the driving to us',
+      'hero.p2': 'A private driver, a settled itinerary and the whole day ahead. You just watch the landscape.',
+      'hero.t3': 'Between the vineyards and the Andes',
+      'hero.p3': 'Luján de Cuyo, Maipú and the Uco Valley. No shared transfers, no one else\u2019s schedule.',
+      'hero.t4': 'Experience Mendoza like no one else',
       'hero.cta': 'Design your experience',
       'hero.scroll': 'Scroll',
       'man.eyebrow': 'Who we are',
@@ -333,12 +341,12 @@
       'exp.5.p': 'We build the whole itinerary around what matters to you: anniversaries, corporate trips, small groups or a single perfect day.',
       'al.eyebrow': 'Partners', 'al.title': 'The doors we open',
       'fl.eyebrow': 'The fleet', 'fl.title': 'Mercedes-Benz Sprinter',
-      'fl.p': 'A luxury van reserved exclusively for our guests. Facing leather captain seats, independent climate control, onboard wifi and a bilingual driver. The transfer stops being dead time between wineries and becomes part of the experience.',
+      'fl.p': 'A luxury van reserved exclusively for our guests. Leather seats, independent climate control, onboard wifi and a bilingual driver. In Mendoza the distances are part of the trip: the transfer stops being dead time between wineries and becomes part of the experience.',
       'fl.s1': 'Passengers', 'fl.s2': 'Bilingual driver', 'fl.s3': 'Availability',
       'cta.eyebrow': 'Bookings', 'cta.title': 'Tell us what you want to live',
       'cta.p': 'Write to us and we will build the itinerary with you. No endless forms — one message is enough.',
       'cta.btn': 'Message us on WhatsApp',
-      'man.cap': 'On board · Uco Valley',
+      'man.cap': 'On the road to the Uco Valley',
       'foot.tag': 'Creators of exclusive experiences · Mendoza, Argentina'
     }
   };

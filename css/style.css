@@ -175,7 +175,7 @@ body.menu-open .menu__list a:nth-child(5){transition-delay:.42s}
 /* =========================================================
    HERO
    ========================================================= */
-.hero{height:520vh;position:relative}
+.hero{height:600vh;position:relative}
 .hero__sticky{position:sticky;top:0;height:100vh;height:100svh;overflow:hidden}
 .hero__canvas{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
 .hero__veil{
@@ -183,6 +183,8 @@ body.menu-open .menu__list a:nth-child(5){transition-delay:.42s}
   background:linear-gradient(to bottom,rgba(5,5,5,.72) 0%,rgba(5,5,5,.28) 35%,rgba(5,5,5,.35) 65%,rgba(5,5,5,.86) 100%);
 }
 .hero__vignette{position:absolute;inset:0;pointer-events:none;box-shadow:inset 0 0 220px 60px rgba(0,0,0,.75)}
+.hero__sticky.is-end .hero__veil{background:linear-gradient(to bottom,rgba(5,5,5,.66) 0%,rgba(5,5,5,.5) 45%,rgba(5,5,5,.8) 100%)}
+.hero__veil{transition:background .8s var(--e)}
 
 .hero__stage{
   position:absolute;left:var(--pad);right:var(--pad);
@@ -191,13 +193,34 @@ body.menu-open .menu__list a:nth-child(5){transition-delay:.42s}
   transition:opacity .7s var(--e),transform .9s var(--e);
   will-change:opacity,transform;
 }
-.hero__stage[data-stage="1"]{top:50%;transform:translateY(-42%);max-width:14ch}
-.hero__stage[data-stage="2"]{top:50%;transform:translateY(-42%);max-width:20ch}
-.hero__stage[data-stage="3"]{top:50%;transform:translateY(-42%);max-width:18ch;align-items:flex-start}
+.hero__stage{top:50%;transform:translateY(-42%);max-width:min(560px,46vw)}
 .hero__stage.is-on{opacity:1;transform:translateY(-50%);pointer-events:auto}
-.hero__stage[data-stage="2"]{left:auto;right:var(--pad);text-align:right;align-items:flex-end}
+
+/* plano 1 — aerea entre viñedos: bloque a la izquierda */
+.hero__stage[data-stage="1"]{max-width:min(620px,48vw)}
+
+/* plano 2 — interior POV: el conductor esta a la izquierda, el texto va a la derecha */
+.hero__stage[data-stage="2"]{left:auto;right:var(--pad);text-align:right;align-items:flex-end;max-width:min(560px,46vw)}
+.hero__stage[data-stage="2"] .lede{margin-left:auto}
+
+/* plano 3 — lateral con la cordillera: izquierda */
+.hero__stage[data-stage="3"]{max-width:min(560px,46vw)}
+
+/* plano 4 — la van sobre negro: bloque centrado, cierre de comercial */
+/* el ultimo plano es la van sobre negro con el logo dorado:
+   el texto se abre arriba y el CTA abajo para no taparla */
+.hero__stage--end{
+  top:0;bottom:0;left:0;right:0;height:100%;
+  max-width:none;transform:translateY(16px);
+  justify-content:space-between;align-items:center;text-align:center;gap:20px;
+  padding:clamp(96px,14vh,150px) var(--pad) clamp(64px,9vh,104px);
+}
+.hero__stage--end.is-on{transform:none}
+.hero__stage--end .display{max-width:min(760px,88vw)}
+
 @media (max-width:760px){
-  .hero__stage[data-stage="2"]{left:var(--pad);text-align:left;align-items:flex-start}
+  .hero__stage[data-stage="2"]{left:var(--pad);right:var(--pad);text-align:left;align-items:flex-start}
+  .hero__stage[data-stage="2"] .lede{margin-left:0}
 }
 
 .hero__scroll{
@@ -316,7 +339,7 @@ body.menu-open .menu__list a:nth-child(5){transition-delay:.42s}
    ========================================================= */
 .fleet{display:grid;grid-template-columns:1.05fr .95fr;align-items:center;gap:clamp(30px,6vw,90px);
   padding:clamp(70px,10vh,130px) var(--pad);max-width:var(--maxw);margin:0 auto;background:var(--black)}
-.fleet__media{overflow:hidden;position:relative;aspect-ratio:4/3}
+.fleet__media{overflow:hidden;position:relative;aspect-ratio:3/2}
 .fleet__media img{width:100%;height:100%;object-fit:cover;transform:scale(1.06);transition:transform 1.4s var(--e)}
 .fleet__media:hover img{transform:scale(1)}
 .fleet__media::after{content:"";position:absolute;inset:0;box-shadow:inset 0 0 90px 20px rgba(0,0,0,.5)}
@@ -392,4 +415,12 @@ body.menu-open .menu__list a:nth-child(5){transition-delay:.42s}
 }
 @media (max-width:400px){
   .display--xl{font-size:2.5rem}
+}
+
+/* legibilidad del texto del hero sobre imagen */
+.hero__stage .display{text-shadow:0 2px 30px rgba(0,0,0,.55)}
+.hero__stage .lede{color:rgba(237,234,228,.78);text-shadow:0 2px 18px rgba(0,0,0,.85)}
+@media (max-width:760px){
+  .hero__stage,.hero__stage[data-stage="1"],.hero__stage[data-stage="2"],.hero__stage[data-stage="3"]{max-width:100%}
+  .hero__stage--end{padding-top:clamp(80px,12vh,120px)}
 }

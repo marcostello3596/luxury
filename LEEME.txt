@@ -14,7 +14,7 @@ ESTRUCTURA
   js/main.js              hero por scroll, idioma, animaciones
   assets/frames/d_*.webp  240 frames desktop (1280px)
   assets/frames/m_*.webp  120 frames mobile (854px)
-  assets/img/             logo, poster e imagen interior
+  assets/img/             logo, poster, foto de flota y foto de ruta
   assets/fonts/           Cormorant Garamond + Jost (self-hosted, sin Google Fonts)
 
 CAMBIOS RAPIDOS
